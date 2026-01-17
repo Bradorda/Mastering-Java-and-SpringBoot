@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: exception-handlers
+
+logging:
+  root: WARN
+  exception-handlers: WARN
