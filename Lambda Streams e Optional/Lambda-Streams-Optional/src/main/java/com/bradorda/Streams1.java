@@ -8,22 +8,20 @@ public class Streams1 {
 
         List<Integer> lista = Arrays.asList(1,2,4,5,6,3,16,20,14,11,10,9,9,2);
 
+
         lista.stream()
                 .skip(2)
                 .forEach(System.out::println);
-
         System.out.println("-------------------------");
 
         lista.stream()
                 .limit(2)
                 .forEach(System.out::println);
-
         System.out.println("-------------------------");
 
         lista.stream()
                 .distinct()
                 .forEach(System.out::println);
-
         System.out.println("-------------------------");
 
         lista.stream()
@@ -31,14 +29,12 @@ public class Streams1 {
                 .limit(3)
                 .distinct()
                 .forEach(System.out::println);
-
         System.out.println("-------------------------");
 
         lista.stream().filter( e -> e % 2 == 0)
                 .distinct()
                 .sorted()
                 .forEach(System.out::println);
-
         System.out.println("-------------------------");
 
         lista.stream()
