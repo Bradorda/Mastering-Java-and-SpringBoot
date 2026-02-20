@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: spring-security
+  sql:
+    init:
+      mode: always
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    defer-datasource-initialization: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydb
+    username: postgres
+    password: 123
+    driver-class-name: org.postgresql.Driver
+
+jwt:
+  public:
+    key: classpath:app.pub
+  private:
+    key: classpath:app.key
+
+logging:
+  level:
+    root: WARN
+    com.bradorda-spring_security: WARN
