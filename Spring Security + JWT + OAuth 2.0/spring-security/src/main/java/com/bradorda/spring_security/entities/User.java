@@ -1,6 +1,8 @@
 package com.bradorda.spring_security.entities;
 
+import com.bradorda.spring_security.controllers.dtos.LoginRequestDTO;
 import jakarta.persistence.*;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Set;
 import java.util.UUID;
@@ -58,4 +60,9 @@ public class User {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+    public boolean isLoginCorrect(LoginRequestDTO loginRequestDTO, PasswordEncoder passwordEncoder) {
+        return passwordEncoder.matches(loginRequestDTO.password(), this.password);
+    }
+
 }
